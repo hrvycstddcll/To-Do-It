@@ -70,7 +70,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const editModal = document.getElementById("edit-task-modal");
     const editIdField = document.getElementById("edit-mission-id");
     const editInput = document.getElementById("edit-mission");
-    const editStatus = document.getElementById("edit-status");
     const editCounter = document.getElementById("edit-char-counter");
 
     wireDismiss(editModal, ["close-edit-modal-btn", "cancel-edit-modal-btn"]);
@@ -81,7 +80,6 @@ document.addEventListener("DOMContentLoaded", () => {
             const mission = btn.dataset.mission || "";
             if (editIdField) editIdField.value = btn.dataset.id || "";
             if (editInput) editInput.value = mission;
-            if (editStatus) editStatus.value = btn.dataset.status === "complete" ? "complete" : "incomplete";
             if (editCounter) editCounter.textContent = `${mission.length} / ${MAX_LENGTH}`;
             openModal(editModal);
             editInput?.focus();
